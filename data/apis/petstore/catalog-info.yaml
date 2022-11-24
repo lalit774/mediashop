@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  description: The Petstore is an example API used to show features of the OpenAPI spec.
+  name: petstore
+  links:
+    - url: https://github.com/swagger-api/swagger-petstorehttps://github.com/lalit774/mediashop/blob/master/data/apis/petstore/catalog-info.yaml
+      title: GitHub Repo
+      icon: github
+spec:
+  type: openapi
+  definition:
+    $text: https://github.com/swagger-api/swagger-petstorehttps://github.com/lalit774/mediashop/blob/master/data/apis/petstore/petstore.json
+  lifecycle: experimental
+  owner: team-c
+  providesApis:
+    - petstore
