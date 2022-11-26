@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: tanzu-team
+  description: Tanzu Team
+spec:
+  type: team
+  profile:
+    displayName: Tanzu Team
+    email: tanzu-team@tanzu.com
+    picture: https://avatars.dicebear.com/api/identicon/team-c@example.com.svg?background=%23fff&margin=25
+  parent: tanzu-org
+  children: []
+  members: [guest, tanzu-user]

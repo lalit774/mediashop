@@ -1,0 +1,87 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: spring-petclinic-vets
+  description: Spring Petclinic Vets
+  tags:
+    - java
+    - spring
+    - petclinic
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=spring-petclinic-vets
+    'backstage.io/techdocs-ref': dir:.
+spec:
+  type: service
+  lifecycle: production
+  system: spring-petclinic-system
+  owner: tanzu-team
+  dependsOn:
+    - resource:spring-petclinic-vets-db
+  providesApis:
+    - spring-petclinic-vets-apis
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: spring-petclinic-customers
+  description: Spring Petclinic Customers
+  tags:
+    - java
+    - spring
+    - petclinic
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=spring-petclinic-customers
+    'backstage.io/techdocs-ref': dir:.
+spec:
+  type: service
+  lifecycle: production
+  system: spring-petclinic-system
+  owner: tanzu-team
+  dependsOn:
+    - resource:spring-petclinic-customers-db
+  providesApis:
+    - spring-petclinic-customers-apis
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: spring-petclinic-visits
+  description: Spring Petclinic Visits
+  tags:
+    - java
+    - spring
+    - petclinic
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=spring-petclinic-visits
+    'backstage.io/techdocs-ref': dir:.
+spec:
+  type: service
+  lifecycle: production
+  system: spring-petclinic-system
+  owner: tanzu-team
+  dependsOn:
+    - resource:spring-petclinic-visits-db
+  providesApis:
+    - spring-petclinic-visits-apis
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: spring-petclinic-api-gateway
+  description: Spring Petclinic API Gateway
+  tags:
+    - java
+    - spring
+    - petclinic
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=spring-petclinic-api-gateway
+    'backstage.io/techdocs-ref': dir:.
+spec:
+  type: service
+  lifecycle: production
+  system: spring-petclinic-system
+  owner: tanzu-team
+  dependsOn:
+    - component:spring-petclinic-vets
+    - component:spring-petclinic-customers-apis
+    - component:spring-petclinic-visits-apis

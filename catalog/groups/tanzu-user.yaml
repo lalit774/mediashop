@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: tanzu-user
+spec:
+  profile:
+    displayName: Tanzu User
+    email: user@tanzu.com
+    picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
+  memberOf: [tanzu-team]

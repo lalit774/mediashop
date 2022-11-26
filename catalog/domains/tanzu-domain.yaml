@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: tanzu-domain
+  description: Everything related to Tanzu
+  links:
+    - url: https://tanzu.vmware.com/tanzu
+      title: VMware Tanzu
+spec:
+  owner: tanzu-team
